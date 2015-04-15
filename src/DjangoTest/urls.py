@@ -1,8 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from Blog.views import archive
-
-import settings
+from SetAddress.views import loadDisplayInfor
 
 urlpatterns = patterns('',
     # Examples:
@@ -11,5 +10,5 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^blog/$', archive),
-    url(r'^static/(?P<path>.*)', 'django.views.static.serve',{'document_root': settings.STATIC_PATH}),
+    url(r'^setAddress/$', loadDisplayInfor),
 )

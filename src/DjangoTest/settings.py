@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from django.conf.global_settings import MEDIA_ROOT, STATICFILES_DIRS
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -92,4 +93,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_PATH = './static'
+MEDIA_ROOT = os.path.join(BASE_DIR, STATIC_URL.replace("/", ""))
+STATICFILES_DIRS = (
+                    MEDIA_ROOT,)
