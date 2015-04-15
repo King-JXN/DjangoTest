@@ -1,0 +1,7 @@
+{% extends "setAddress.html"%}
+    {% block content %}
+        {% for post in posts %}
+        <h2>{{post.infor}}</h2>
+        <p>{{post.displayInfor}}</p>
+        {% endfor %}
+    {% endblock %}
